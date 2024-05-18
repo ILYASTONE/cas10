@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <p>prvi broj</p>
+<input id="prvi_broj">
+<p>drugi broj</p>
+<input id="drugi_broj">
+<p>
+<button id="saberi" onclick="saberi()">saberi</button>
+<button id="oduzmi" onclick="oduzmi()">oduzmi</button>
+<button id="podeli" onclick="podeli()">podeli</button>
+<button id="pomnozi" onclick="pomnozi()">pomnozi</button>
+</p>
+<p>rezultat</p>
+<input id="rezultat" readonly >
+
+<script>
+function saberi() {
+var prvi = parseFloat(document.getElementById("prvi_broj").value);
+var drugi = parseFloat(document.getElementById("drugi_broj").value);
+var rezultat = prvi + drugi;
+document.getElementById("rezultat").value = rezultat;
+}
+function oduzmi() {
+var prvi = parseFloat(document.getElementById("prvi_broj").value);
+var drugi = parseFloat(document.getElementById("drugi_broj").value);
+var rezultat = prvi - drugi;
+document.getElementById("rezultat").value = rezultat;
+}
+function podeli() {
+var prvi = parseFloat(document.getElementById("prvi_broj").value);
+var drugi = parseFloat(document.getElementById("drugi_broj").value);
+if(drugi == 0) {
+alert("Deljenje sa 0 nije moguce!");
+document.getElementById("rezultat").value = "greska";
+}
+else{
+var rezultat = prvi / drugi;
+document.getElementById("rezultat").value = rezultat;
+}
+}
+
+function pomnozi() {
+var prvi = parseFloat(document.getElementById("prvi_broj").value);
+var drugi = parseFloat(document.getElementById("drugi_broj").value);
+var rezultat = prvi * drugi;
+document.getElementById("rezultat").value = rezultat;
+}
+</script>
+</body>
+</html>
